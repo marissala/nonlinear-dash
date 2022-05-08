@@ -39,8 +39,6 @@ c = alt.Chart(df0).mark_line().encode(
 )
 st.altair_chart(c)
 
-print(df)
-print(df2)
 df0["agg_followers"] = df0["followers"] + df0["New subscribers"]
 df0 = df0[df0["New subscribers"] > -70]
 
