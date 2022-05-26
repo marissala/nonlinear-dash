@@ -3,11 +3,11 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 
-df = pd.read_csv("podcasts-2015-05-01_to_2022-05-05.csv")#[2500:]
+df = pd.read_csv("/Users/maris/Documents/Programming/nonlinear-dashboard/podcasts-2015-05-01_to_2022-05-05.csv")#[2500:]
 df["date"] = pd.to_datetime(df["date"])
 df = df.loc[(df['date'] > '2021-10-12')].reset_index(drop=True)
 
-df2 = pd.read_csv("Plays 20190601-20220506.csv")
+df2 = pd.read_csv("/Users/maris/Documents/Programming/nonlinear-dashboard/Plays 20190601-20220506.csv")
 df2["date"] = pd.to_datetime(df2["Pacific Time"])
 print(len(df2))
 df2 = df2[df2["Minutes played"] > 1]
